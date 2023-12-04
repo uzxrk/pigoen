@@ -2,16 +2,25 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/slack-go/slack"
 )
 
 func main() {
-	api := slack.New("xoxe.xoxp-1-Mi0yLTMwNTg1ODM3OTQxNTAtMzA2OTA3Nzk4NTM5Ny02MjkwMDE0NzU4ODM0LTYyNzU0ODE2MTkxNzUtNjM3ZDExNmJmMzY0YmZiOGFlNTNkZjAwY2YzNDViMWJlMzgyYWVhMjdlY2JiZDdjZjY3YmYzMTQxZGI4YTMyZA", slack.OptionDebug(true))
+	err := godotenv.Load(".env")
+	token := os.Getenv("SLACK_TOKEN")
+	userId := os.Getenv("SLACK_USER_ID")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+	api := slack.New(token, slack.OptionDebug(true))
 	// If you set debugging, it will log all requests to the console
 	// Useful when encountering issues
 	// slack.New("YOUR_TOKEN_HERE", slack.OptionDebug(true))
-	user, err := api.GetUserInfo("T031QH5PC4E")
+	user, err := api.GetUserInfo(userId)
 	fmt.Println(user)
 	if err != nil {
 		fmt.Printf("%s \n", err)
