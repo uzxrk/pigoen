@@ -25,6 +25,7 @@ A simple Go application to archive Slack messages.
 3. Configure your Slack token in `configs/config.yaml`:
     ```yaml
     slack_token: "YOUR_SLACK_API_TOKEN"
+    channel_id: "CHANNEL_ID"
     ```
 
 ### Usage
