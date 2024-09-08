@@ -1,7 +1,5 @@
 # Pigoen - A Slack Message Archiver
 
----
-
 A Go application that archives and decrypts Slack messages from specific channels. This app can archive messages from Slack channels, encrypt them, and provide functionality to decrypt and filter messages through a command-line interface (CLI).
 
 ## Features
@@ -130,5 +128,3 @@ Feel free to open issues or submit pull requests for improvements, bug fixes, or
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ---
-
-This `README.md` gives an overview of your app's functionality, setup instructions, and CLI usage examples.
